@@ -1,6 +1,12 @@
 // Global vars
 var deferral, fs, elementtree, path;
 
+var Q = require("q"),
+    fs = require("fs"),
+    path = require("path"),
+    elementtree = require("elementtree");
+// Updated syntax
+
 var disableAllowBackup = (function () {
 
     var disableAllowBackup = {};
@@ -71,11 +77,7 @@ var disableAllowBackup = (function () {
 })();
 
 module.exports = function (ctx) {
-    var Q = ctx.requireCordovaModule("q");
-    fs = ctx.requireCordovaModule("fs");
-    path = ctx.requireCordovaModule("path");
-    elementtree = ctx.requireCordovaModule("elementtree");
-
+    
     deferral = Q.defer();
 
     try {
