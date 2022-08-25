@@ -63,6 +63,8 @@ var disableAllowBackup = (function () {
                 root.set("xmlns:tools", "http://schemas.android.com/tools");
                 applicationElement.set("android:allowBackup", "false");
                 applicationElement.set("tools:replace", "android:allowBackup");
+                applicationElement.set("android:usesCleartextTraffic", "false"); // Added this for own custom manifest
+                applicationElement.set("android:hasFragileUserData", "true");    // Added this for own custom manifest            
             } else {
                 throw new Error("Invalid AndroidManifest.xml structure. No <application> tag found.");
             }
